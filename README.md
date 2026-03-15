@@ -1,0 +1,1 @@
+# truque-do-pico-de-emo-o-
