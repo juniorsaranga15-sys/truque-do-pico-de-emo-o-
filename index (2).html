@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truque do Pico Emoção: Conquiste Qualquer Mulher</title>
+    <style>
+        :root {
+            --color-primary-bg: hsl(220, 15%, 10%);
+            --color-secondary-bg: hsl(220, 15%, 15%);
+            --color-text-light: hsl(220, 20%, 90%);
+            --color-text-muted: hsl(220, 10%, 60%);
+            --color-accent: hsl(350, 80%, 55%); /* Strong red/crimson */
+            --color-accent-dark: hsl(350, 80%, 45%);
+            --color-border: hsl(220, 10%, 25%);
+
+            --font-family-heading: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-family-body: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2.5rem;
+            --spacing-xl: 4rem;
+            --spacing-xxl: 6rem;
+
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+
+            --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px; /* Base for rem units */
+        }
+
+        body {
+            font-family: var(--font-family-body);
+            line-height: 1.6;
+            color: var(--color-text-light);
+            background-color: var(--color-primary-bg);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-accent-dark);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-family-heading);
+            color: var(--color-text-light);
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; }
+        h2 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 700; }
+        h3 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); font-weight: 600; }
+        p { margin-bottom: var(--spacing-md); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--color-secondary-bg);
+            padding: var(--spacing-sm) 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-light);
+            margin-right: var(--spacing-md);
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap; /* Allow wrapping */
+            justify-content: center; /* Center items if they wrap */
+            margin-top: 0; /* Reset margin for nav ul */
+        }
+
+        header nav ul li a {
+            color: var(--color-text-muted);
+            font-weight: 500;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            color: var(--color-text-light);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: var(--spacing-md) var(--spacing-lg);
+            background-color: var(--color-accent);
+            color: var(--color-text-light);
+            font-weight: 700;
+            text-transform: uppercase;
+            border-radius: var(--border-radius-md);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--color-accent-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Sections */
+        section {
+            padding: var(--spacing-xl) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        .hero {
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            background: linear-gradient(135deg, var(--color-primary-bg) 0%, hsl(220, 20%, 5%) 100%);
+        }
+
+        .hero h1 {
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            max-width: 800px;
+            margin: 0 auto var(--spacing-xl);
+            color: var(--color-text-muted);
+        }
+
+        .content-section {
+            background-color: var(--color-primary-bg);
+        }
+
+        .content-section h2 {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+            padding-bottom: var(--spacing-md);
+        }
+
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--color-accent);
+            border-radius: 2px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .card {
+            background-color: var(--color-secondary-bg);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card h3 {
+            color: var(--color-accent);
+            margin-bottom: var(--spacing-sm);
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+        }
+
+        .card p {
+            color: var(--color-text-muted);
+            margin-bottom: 0;
+        }
+
+        .highlight-section {
+            background: linear-gradient(160deg, var(--color-secondary-bg) 0%, hsl(220, 20%, 20%) 100%);
+            padding: var(--spacing-xxl) 0;
+            text-align: center;
+        }
+
+        .highlight-section h2 {
+            color: var(--color-accent);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight-section p {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            max-width: 900px;
+            margin: 0 auto var(--spacing-xl);
+            color: var(--color-text-light);
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            background: linear-gradient(45deg, hsl(350, 80%, 40%) 0%, var(--color-accent) 100%);
+            color: var(--color-text-light);
+        }
+
+        .cta-section h2 {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-section p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            max-width: 700px;
+            margin: 0 auto var(--spacing-xl);
+        }
+
+        .cta-section .btn {
+            background-color: var(--color-primary-bg);
+            color: var(--color-accent);
+            box-shadow: var(--shadow-md);
+        }
+
+        .cta-section .btn:hover {
+            background-color: hsl(220, 15%, 5%);
+            color: var(--color-accent-dark);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: hsl(220, 15%, 8%);
+            color: var(--color-text-muted);
+            text-align: center;
+            padding: var(--spacing-lg) 0;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--color-border);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+                gap: var(--spacing-md);
+            }
+
+            header .logo {
+                margin-right: 0;
+            }
+
+            header nav ul {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
+            h2 { font-size: clamp(1.8rem, 6vw, 2.8rem); }
+            h3 { font-size: clamp(1.3rem, 4vw, 2rem); }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: clamp(1.8rem, 10vw, 3rem);
+            }
+            .hero p {
+                font-size: clamp(1rem, 3.5vw, 1.2rem);
+            }
+            .btn {
+                padding: var(--spacing-sm) var(--spacing-md);
+                font-size: 1rem;
+            }
+            section {
+                padding: var(--spacing-lg) 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#inicio" class="logo">Truque do Pico Emoção</a>
+            <nav>
+                <ul>
+                    <li><a href="#dor">A Dor</a></li>
+                    <li><a href="#inimigo">O Inimigo</a></li>
+                    <li><a href="#historia">Minha História</a></li>
+                    <li><a href="#truque">O Truque</a></li>
+                    <li><a href="#prova">Resultados</a></li>
+                    <li><a href="#oferta">Oferta</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <h1>Você já perdeu aquela mina dos sonhos?</h1>
+                <p>Então escuta isso agora, porque eu vou te mostrar o truque que faz qualquer mulher ficar obcecada por você em menos de cinco minutos.</p>
+                <p>Esquece tudo que você já ouviu sobre cantadas prontas ou joguinhos de sedução. Isso não funciona mais, cara. O que eu vou te revelar é algo que ninguém te conta, mas que muda o jogo completamente.</p>
+                <p>Sabe o que é mais louco? Não é sobre ser bonito, ter dinheiro ou falar as coisas certas. É sobre disparar um gatilho emocional que ela nem sabe que tem. E eu sei exatamente como fazer isso.</p>
+                <a href="#oferta" class="btn">Quero o Truque Agora!</a>
+            </div>
+        </section>
+
+        <section id="dor" class="content-section">
+            <div class="container">
+                <h2>A Dor Que Você Conhece Bem</h2>
+                <div class="content-grid">
+                    <div class="card">
+                        <h3>💔 O Coração Acelera, a Boca Trava</h3>
+                        <p>Olha, eu sei como é. Você vê aquela mina incrível, o coração acelera, mas na hora de chegar nela, trava. Ou pior, você até tenta, mas ela te dá um fora e você fica se sentindo um lixo. Já passei por isso mil vezes, brother. Aquela sensação de 'por que eu não consigo?' dói pra caramba.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🤔 O Pior Não é o Fora, é a Dúvida</h3>
+                        <p>E o pior não é só o fora. É ficar pensando depois: 'Será que eu sou ruim nisso? Será que nunca vou conseguir?' Você tenta de tudo, copia frases de internet, força uma confiança que não tem, mas nada rola. E enquanto isso, outros caras menos interessantes estão pegando as minas que você queria. Isso te deixa puto, né? Eu sei, porque eu já senti isso na pele.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="inimigo" class="content-section">
+            <div class="container">
+                <h2>O Inimigo Não é Você</h2>
+                <div class="content-grid">
+                    <div class="card">
+                        <h3>🚫 Conselhos de Merda</h3>
+                        <p>E a culpa não é sua, tá ligado? A culpa é desses conselhos de merda que te ensinam a ser um babaca arrogante ou um cara forçado que parece um robô. Essas dicas de 'sedução' da internet só te fazem parecer ridículo. Chega disso.</p>
+                    </div>
+                    <div class="card">
+                        <h3>🕰️ Métodos Antigos Não Funcionam Mais</h3>
+                        <p>Durante anos, todo mundo acreditou que pra conquistar uma mulher era só chegar com papo furado, ostentar ou fingir ser quem você não é. Só que isso não funciona mais. As minas de hoje percebem na hora quando você tá forçando. Elas querem algo real, algo que mexa com elas de verdade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="historia" class="content-section">
+            <div class="container">
+                <h2>Minha História: Do Toco à Descoberta</h2>
+                <div class="card">
+                    <h3>👑 O Rei do Toco</h3>
+                    <p>Eu era o rei do toco, cara. Chegava nas minas, tentava impressionar, usava aquelas cantadas ridículas, e só ouvia 'não'. Até que um dia, depois de levar mais um fora humilhante, conheci um cara que parecia não fazer esforço nenhum, mas as mulheres ficavam loucas por ele.</p>
+                    <p>Fiquei observando, estudei cada palavra, cada gesto, e descobri o segredo: ele usava um truque emocional que deixava elas viciadas na presença dele. Foi aí que tudo mudou pra mim.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="truque" class="highlight-section">
+            <div class="container">
+                <h2>O TRUQUE DO PICO EMOÇÃO</h2>
+                <p>É um método que faz qualquer mulher sentir uma conexão tão forte com você que ela não consegue parar de pensar em você. Não é sobre falar algo mágico, não é sobre aparência.</p>
+                <p>É sobre ativar um gatilho no cérebro dela que a faz te querer agora. E o melhor? Qualquer cara pode fazer isso, em qualquer lugar, sem parecer forçado.</p>
+                <a href="#oferta" class="btn">Quero Dominar o Truque!</a>
+            </div>
+        </section>
+
+        <section id="prova" class="content-section">
+            <div class="container">
+                <h2>Resultados Reais e Objeções Quebradas</h2>
+                <div class="content-grid">
+                    <div class="card">
+                        <h3>📈 Minha Vida Virou de Cabeça Pra Baixo</h3>
+                        <p>Depois que aprendi isso, minha vida virou de cabeça pra baixo. Em menos de um mês, eu tava saindo com minas que antes nem olhavam pra mim. E não sou só eu, já ensinei esse truque pra mais de 300 caras, e todos eles voltaram falando: 'Cara, como isso funciona tão bem?' É simples, é comprovado, e vai direto no que mexe com elas.</p>
+                    </div>
+                    <div class="card">
+                        <h3>❌ Não é Manipulação, é Conexão</h3>
+                        <p>E antes que você pense, não, isso não é sobre manipulação ou enganar ninguém. É sobre criar uma conexão verdadeira. Você não precisa ser rico, não precisa ser o cara mais bonito da balada, e nem precisa decorar um monte de frases. É só usar o Truque do Pico Emoção do jeito que eu vou te ensinar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="oferta" class="cta-section">
+            <div class="container">
+                <h2>Chega de Levar Toco!</h2>
+                <p>Se você quer parar de levar toco e finalmente ter o poder de escolher com quem você quer ficar, clica agora no botão aqui embaixo.</p>
+                <p>Eu vou te mostrar o passo a passo do Truque do Pico Emoção num treinamento rápido e direto. Mas corre, porque as vagas pra essa mentoria estão acabando. Clica agora e muda o jogo hoje mesmo, brother!</p>
+                <a href="#" class="btn">Garanta Seu Acesso ao Truque do Pico Emoção!</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Truque do Pico Emoção. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
